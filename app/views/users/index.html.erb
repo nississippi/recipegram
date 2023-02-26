@@ -2,6 +2,7 @@
 <p>Find me in app/views/users/index.html.erb</p>
 
 <% @users.each do |user| %>
+  <%= image_tag attachment_url(user, :profile_image, :fill, 300, 300, format: "jpg", fallback: "/images/no-image.jpg") %>
   <%= attachment_image_tag user, :profile_image, fallback: "/images/no-image.jpg" %>
   <%= user.username %>
 <% end %>
